@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Results Archive - Sports Live Updates</title>
+  <link rel="stylesheet" href="styles-dark.css">
 </head>
 <body>
   <header>
-    <div >
-      <img alt="Sports Logo">
+    <div class="logo">
+      <img src="assets/SaMeSa logo.png" alt="Sports Logo">
     </div>
     <nav>
       <ul>
@@ -23,8 +24,13 @@
   </header>
 
   <main>
-    <section >
+    <section class="card-container">
       <h2>Results Archive</h2>
+      <div class="card">
+        <input type="date" id="date-picker" />
+        <table id="results-table">
+        </table>
+      </div>
       
     </section>
   </main>

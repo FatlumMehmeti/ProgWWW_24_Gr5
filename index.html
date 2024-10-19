@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sports Live Updates - Dark Theme</title>
+    <title>Sports Live Updates</title>
+    <link rel="stylesheet" href="styles-dark.css">
 </head>
 
 <body>
 
     <header>
-        <div>
-            <img alt="Sports Logo">
+        <div class="logo">
+            <img src="assets/SaMeSa logo.png" alt="Sports Logo">
         </div>
         <nav>
             <ul>
@@ -26,49 +27,53 @@
     </header>
 
     <main>
-        <section>
+        <section class="hero">
             <h1>Real-Time Sports Updates</h1>
             <p>Follow live scores, headlines, and in-depth stats for your favorite sports.</p>
         </section>
 
-        <section>
+        <section class="card-container">
             <h2>Top Headlines</h2>
-            <div>
-                <img alt="Headline 1">
-                <div>
+            <div class="card">
+                <img src="assets/headline1.jpg" alt="Headline 1">
+                <div class="card-content">
                     <h3>Headline 1</h3>
                     <p>Summary of the first sports headline goes here.</p>
                 </div>
             </div>
-            <div>
-                <img alt="Headline 2">
-                <div>
+            <div class="card">
+                <img src="assets/headline2.jpg" alt="Headline 2">
+                <div class="card-content">
                     <h3>Headline 2</h3>
                     <p>Summary of the second sports headline goes here.</p>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="card-container">
             <h2>Live Scores</h2>
-            <div>
-                <p>Loading live scores...</p>
+            <div class="card live-score">
+                <p id="live-scores-ticker">Loading live scores...</p>
             </div>
         </section>
 
-        <section>
+        <section class="card-container">
             <h2>Upcoming Matches</h2>
-            <div>
-                <table>
+            <div class="card">
+                <table id="upcoming-matches-table">
                 </table>
             </div>
         </section>
     </main>
 
     <footer>
+        <div class="social-icons">
+            <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+          </div>
         <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
     </footer>
 
 </body>
-
 </html>
