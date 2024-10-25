@@ -10,32 +10,55 @@
     color: #eaeaea;
   }
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #222;
-    padding: 1rem;
-  }
-  
-  .logo img {
-    width: 100px;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
+
+header {
+  height: 90px;  /* Adjust this value to match the height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #052b3a9d;
+  padding: 0 0px;  /* Add padding for spacing */
+}
+header .logo-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 100%;  
+  max-height: 90px;  
+}
+
+header .site-title {
+  font-size: 16px;
+  max-height: 90px;
+  font-family: "Orbitron";
+}
+
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-items: center; /* Center navigation items vertically */
+}
+
+nav ul li {
+  margin: 0 15px;  /* Spacing between items */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;  /* Center text vertically */
+}
+
   
   .card-container {
     padding: 20px;
@@ -57,7 +80,7 @@
   }
   
   footer {
-    background-color: #222;
+    background-color: #052b3a9d;
     color: #aaa;
     text-align: center;
     padding: 20px;
