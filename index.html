@@ -7,20 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sports Live Updates</title>
     <link rel="stylesheet" href="assets/CSS/styles-dark.css">
+    <link rel="stylesheet" href="assets/CSS/menu.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-    <div class="logo-title-wrapper">
-        <div class="logo">
-            <img src="assets/SaMeSa logo.png" alt="Sports Logo">
+        <div class="logo-title-wrapper">
+            <div class="logo">
+                <img src="assets/SaMeSa logo.png" alt="Sports Logo">
+            </div>
+            <div class="site-title">
+                <h1>SaMeSa</h1>
+            </div>
         </div>
-        <div class="site-title" >
-            <h1>SaMeSa</h1>
-        </div>
-    </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,17 +29,27 @@
                 <li><a href="results-archive.html">Results Archive</a></li>
                 <li><a href="stats.html">Team/Player Stats</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li>
+            </ul>
+        </nav>
+        <div class="dropdown">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="dropdown-content" id="dropdownMenu">
+                <div class="dark-light-toggle">
+                    <span class="toggle-icon" id="modeIcon">🌙</span> <!-- Initial icon set to moon -->
                     <label class="switch">
                         <input type="checkbox" onclick="toggleTheme()">
                         <span class="slider"></span>
-                    </label> D/L Mode
-                </li>
-                <li id="google_translate_element"></li>
-            </ul>
-        </nav>
+                    </label>
+                    Dark/Light Mode
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
     </header>
-
     <main>
         <section class="hero">
             <h1>Real-Time Sports Updates</h1>
@@ -88,31 +99,12 @@
         <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
     </footer>
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle("light-mode");
-
-            const header = document.querySelector("header");
-            const footer = document.querySelector("footer");
-            if (body.classList.contains("light-mode")) {
-                header.style.backgroundColor = "#f0f0f0";
-                footer.style.backgroundColor = "#f0f0f0";
-                body.style.backgroundColor = "#ffffff";
-                body.style.color = "#000000";
-            } else {
-                header.style.backgroundColor = "#333";
-                footer.style.backgroundColor = "#333";
-                body.style.backgroundColor = "#000000";
-                body.style.color = "#ffffff";
-            }
-
-            document.querySelectorAll('p, h1, h2, h3, a').forEach(element => {
-                if (body.classList.contains("light-mode")) {
-                    element.style.color = "#000000";
-                } else {
-                    element.style.color = "#ffffff";
-                }
-            });
+          function toggleTheme() {
+            document.body.classList.toggle("light-mode");
+            const isLightMode = document.body.classList.contains("light-mode");
+            document.getElementById("modeIcon").textContent = isLightMode ? "☀️" : "🌙";
+            document.body.style.backgroundColor = isLightMode ? "#fff" : "#000";
+            document.body.style.color = isLightMode ? "#000" : "#fff";
         }
 
 
