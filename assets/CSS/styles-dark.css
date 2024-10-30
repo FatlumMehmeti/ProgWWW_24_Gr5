@@ -22,7 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #052b3a9d;
-  padding: 0 0px;  /* Add padding for spacing */
+  padding:  0 0px;  /* Add padding for spacing */
 }
 header .logo-title-wrapper {
   text-decoration: none;
@@ -42,7 +42,14 @@ header .site-title {
   font-family: "Orbitron";
 }
 
-
+header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 0;
+  margin-left: 0;
+}
 
 /* nav ul {
   display: flex;
