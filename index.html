@@ -24,31 +24,33 @@
             <h1>SaMeSa</h1>
         </div>
     </a>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="live-scores.html">Live Scores</a></li>
-            <li><a href="results-archive.html">Results Archive</a></li>
-            <li><a href="stats.html">Team/Player Stats</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="dropdown">
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="dropdown-content" id="dropdownMenu">
-            <div class="dark-light-toggle">
-                <span class="toggle-icon" id="modeIcon">🌙</span> 
-                <label class="switch">
-                    <input type="checkbox" onclick="toggleTheme()">
-                    <span class="slider"></span>
-                </label>
-                Dark/Light Mode
+    <div class="nav-container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="live-scores.html">Live Scores</a></li>
+                <li><a href="results-archive.html">Results Archive</a></li>
+                <li><a href="stats.html">Team/Player Stats</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="dropdown">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div id="google_translate_element"></div>
+            <div class="dropdown-content" id="dropdownMenu">
+                <div class="dark-light-toggle">
+                    <span class="toggle-icon" id="modeIcon">🌙</span> 
+                    <label class="switch">
+                        <input type="checkbox" onclick="toggleTheme()">
+                        <span class="slider"></span>
+                    </label>
+                    Dark/Light Mode
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
         </div>
     </div>
 </header>
