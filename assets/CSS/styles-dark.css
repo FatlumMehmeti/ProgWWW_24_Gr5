@@ -19,9 +19,11 @@ main {
 header {
 height: 90px;  /* Adjust this value to match the height */
 display: flex;
+width: 100%;
 justify-content: space-between;
 align-items: center;
 background-color: #052b3a9d;
+
 padding:  0 0px;  /* Add padding for spacing */
 }
 header .logo-title-wrapper {
@@ -44,34 +46,11 @@ font-family: "Orbitron";
 
 header .nav-container {
 display: flex;
-align-items: center;
-justify-content: center;
-gap: 20px;
+justify-content: end;
+padding-right: 20px;
 padding-left: 0;
 margin-left: 0;
 }
-
-/* nav ul {
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
-height: 100%;*//*
-align-items: center; /* Center navigation items vertically */
-/*}
-
-nav ul li {
-margin: 0 15px;  /* Spacing between items */
-/*}
-
-nav ul li a {
-color: white;
-text-decoration: none;
-font-size: 16px;
-height: 100%;
-display: flex;
-align-items: center;  /* Center text vertically */
-/*} */
 nav ul {
 display: flex;
 list-style: none;

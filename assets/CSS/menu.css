@@ -1,6 +1,7 @@
 .dropdown {
     position: relative;
     right: 10px;
+    left: 5px;
     display: inline-block;
 }
 .hamburger {
