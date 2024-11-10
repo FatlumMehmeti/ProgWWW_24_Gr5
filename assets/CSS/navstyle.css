@@ -1,0 +1,85 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #052b3a9d;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.logo {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Links Container */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-container ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container ul li {
+    margin-right: 20px;
+}
+
+.nav-container ul li a {
+    color: #c8cdcd;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Orbitron", sans-serif;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-container ul li a:hover {
+    color: #ff4c4c;
+}
+
+/* Icons in Navbar */
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons i {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-icons i:hover {
+    color: #ff4c4c;
+}
+
+/* Google Translate Element */
+#google_translate_element {
+    display: inline-block;
+    margin-left: 10px;
+    color: #fff;
+}

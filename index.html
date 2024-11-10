@@ -1,88 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Football Live Scores, Latest Football Results | SaMeSa</title>
-    <link rel="stylesheet" href="assets/CSS/styles-dark.css">
-    <link rel="stylesheet" href="assets/CSS/menu.css">
-    <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="assets/CSS/styles-dark.css" />
+    <link rel="stylesheet" href="assets/CSS/navstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
     <header>
-    <a href="index.html" class="logo-title-wrapper">
-        <div class="logo">
-            <img src="assets/SaMeSa logo.png" alt="Sports Logo">
-        </div>
-        <div class="site-title">
-            <h1>SaMeSa</h1>
-        </div>
-    </a>
-    <div class="nav-container">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="live-scores.html">Live Scores</a></li>
-                <li><a href="results-archive.html">Results Archive</a></li>
-                <li><a href="stats.html">Team/Player Stats</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="dropdown">
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/SaMeSa logo.png" alt="Logo">
             </div>
-            <div class="dropdown-content" id="dropdownMenu">
-                <div class="dark-light-toggle">
-                    <span class="toggle-icon" id="modeIcon">🌙</span> 
-                    <label class="switch">
-                        <input type="checkbox" onclick="toggleTheme()">
-                        <span class="slider"></span>
-                    </label>
-                    Dark/Light Mode
+            <div class="nav-container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="live-scores.html">Live Scores</a></li>
+                    <li><a href="results-archive.html">Results Archive</a></li>
+                    <li><a href="stats.html">Team/Player Stats</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-icons">
+                <!-- Dark/Light Mode Toggle -->
+                <div class="dark-light-toggle" onclick="toggleTheme()">
+                    <i class="ri-contrast-2-line" id="modeIcon"></i>
                 </div>
-                <div id="google_translate_element"></div>
+                <!-- Language Translate Option -->
+                <div class="translate-toggle" onclick="openTranslate()">
+                    <i class="ri-translate"></i>
+                </div>
+                <div id="google_translate_element" style="display: none;"></div>
             </div>
-        </div>
-    </div>
-</header>
+        </nav>
+    </header>
 
-    <main>
-        
-    </main>
+    <main></main>
 
     <footer>
         <div class="social-icons">
-            <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
-            <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
-            <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="assets/twitter.svg" alt="Twitter" /></a>
+            <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
         </div>
         <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
     </footer>
-    <script>
-          function toggleTheme() {
-            document.body.classList.toggle("light-mode");
-            const isLightMode = document.body.classList.contains("light-mode");
-            document.getElementById("modeIcon").textContent = isLightMode ? "☀️" : "🌙";
-            document.body.style.backgroundColor = isLightMode ? "#fff" : "#000";
-            document.body.style.color = isLightMode ? "#000" : "#fff";
-        }
 
-
-        // Google Translate 
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-    </script>
+    <script src="assets/js/script.js"></script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
-
 </html>
