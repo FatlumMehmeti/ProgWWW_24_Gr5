@@ -1,0 +1,109 @@
+.site-footer {
+    background-color: #052b3a9d;
+    color: #c8cdcd;
+    padding: 40px 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #c8cdcd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff4c4c;
+}
+
+/* Social Icons Styling */
+.social-icons a {
+    font-size: 32px;
+    margin: 0 10px;
+    color: #c8cdcd;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff4c4c;
+    transform: scale(1.2);
+}
+
+/* Newsletter Signup Styling */
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section input[type="email"] {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+}
+
+.footer-section button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-section button:hover {
+    background-color: #e43c3c;
+}
+
+/* Legal Links Styling */
+.legal-links ul {
+    list-style-type: none;
+    padding: 0 30%;
+    display: flex;
+    gap: 15px;
+}
+
+.legal-links ul li a {
+    color: #c8cdcd;
+    text-decoration: none;
+}
+
+.legal-links ul li a:hover {
+    color: #ff4c4c;
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 14px;
+}
