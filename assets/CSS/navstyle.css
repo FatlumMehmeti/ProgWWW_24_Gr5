@@ -62,6 +62,7 @@
 
 /* Icons in Navbar */
 .nav-icons {
+    padding-right: 10%;
     display: flex;
     gap: 15px;
 }

@@ -61,27 +61,6 @@ header {
 .translate-toggle:hover i {
   color: #ff4c4c;
 }
-
-/* Footer Styling
-footer {
-  background-color: #052b3a9d;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-  font-family: "Inter", sans-serif;
-}
-
-footer .social-icons img {
-  width: 24px;
-  margin: 0 10px;
-  filter: brightness(0) invert(1);
-}
-
-footer p {
-  margin-top: 10px;
-} */
-
-
 input,
 textarea,
 button {

@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Results Archive - Sports Live Updates</title>
-  <link rel="stylesheet" href="assets/CSS/styles-dark.css">
-  <link rel="stylesheet" href="assets/CSS/menu.css">
-  <link rel="stylesheet" href="assets/CSS/navstyle.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Football Live Scores, Latest Football Results | SaMeSa</title>
+    <link rel="stylesheet" href="assets/CSS/styles-dark.css" />
+    <link rel="stylesheet" href="assets/CSS/navstyle.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css" />
+    <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="assets/SaMeSa logo.png" alt="Logo">
-        </div>
-        <div class="nav-container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="live-scores.html">Live Scores</a></li>
-                <li><a href="results-archive.html">Results Archive</a></li>
-                <li><a href="stats.html">Team/Player Stats</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-icons">
-            <!-- Dark/Light Mode Toggle -->
-            <div class="dark-light-toggle" onclick="toggleTheme()">
-                <i class="ri-contrast-2-line" id="modeIcon"></i>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/Img/SaMeSa logo.png" alt="Logo">
             </div>
-            <!-- Language Translate Option -->
-            <div class="translate-toggle" onclick="openTranslate()">
-                <i class="ri-translate"></i>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="live-scores.html">Live Scores</a></li>
+                    <li><a href="results-archive.html">Results Archive</a></li>
+                    <li><a href="stats.html">Team/Player Stats</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
-            <div id="google_translate_element" style="display: none;"></div>
-        </div>
-    </nav>
-</header>
+            <div class="nav-icons">
+                <!-- Dark/Light Mode Toggle -->
+                <div class="dark-light-toggle" onclick="toggleTheme()">
+                    <i class="ri-contrast-2-line" id="modeIcon"></i>
+                </div>
+                <!-- Language Translate Option -->
+                <div class="translate-toggle" onclick="openTranslate()">
+                    <i class="ri-translate"></i>
+                </div>
+                <div id="google_translate_element" style="display: none;"></div>
+            </div>
+        </nav>
+    </header>
+
 
   <main>
     <section class="card-container">
@@ -55,14 +56,66 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="footer-container">
+        
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="results-archive.html">Results Archive</a></li>
+                <li><a href="stats.html">Team/Player Stats</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Social Media Section -->
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="ri-facebook-box-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+            </div>
+        </div>
+        
+        <!-- Contact Information Section -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@sportsliveupdates.com">support@sportsliveupdates.com</a></p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+        
+        <!-- Newsletter Signup Section -->
+        <div class="footer-section">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form action="#" method="POST">
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <!-- Legal Information Section -->
+        <div class="footer-section legal-links">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Footer Bottom Text -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
+    </div>
+</footer>    
 
-  <footer>
-    <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
-  </footer>
-  <script src="assets/js/script.js"></script>
-
+<script src="assets/js/script.js"></script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
-
 </html>
