@@ -1,22 +1,22 @@
 /* Navbar Styles */
+
 .navbar {
-    background-color: #052b3a9d;
+    max-width: 1240px;
+}
+.container .navbar  {
     height: 90px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     z-index: 999;
 }
 
 .logo {
     height: 90px;
-    width: 90px;
+    /* width: 90px; */
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -41,10 +41,11 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 15px;
 }
 
 .nav-container ul li {
-    margin-right: 20px;
+    
 }
 
 .nav-container ul li a {
@@ -52,7 +53,7 @@
     text-decoration: none;
     font-size: 18px;
     font-family: "Orbitron", sans-serif;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     transition: color 0.3s ease;
 }
 
@@ -62,7 +63,6 @@
 
 /* Icons in Navbar */
 .nav-icons {
-    padding-right: 10%;
     display: flex;
     gap: 15px;
 }

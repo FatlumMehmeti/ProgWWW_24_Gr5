@@ -12,9 +12,155 @@
     <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <style>
+      .match-section {
+      width: 100%;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .match-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: #2a2a2a;
+    }
+
+    .league {
+      font-size: 14px;
+    }
+
+    .region {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .match-content {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .teams {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .team {
+      text-align: center;
+    }
+
+    .team img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .time {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-around;
+      background-color: #2a2a2a;
+      padding: 10px;
+    }
+
+    .info-tab {
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .info-tab:hover {
+      background-color: #3a3a3a;
+    }
+
+    .match-footer {
+      padding: 10px 15px;
+      background-color: #1e1e1e;
+      border-top: 1px solid #333;
+    }
+
+    .match-footer div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .icon {
+      margin-right: 5px;
+    }
+
+    .stadium {
+      font-size: 14px;
+      color: #bbb;
+    }
+
+.team-selector {
+      padding-block:100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team, .draw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team p, .draw p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.shirt {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+#stade-reims {
+    background: url('https://via.placeholder.com/80x80.png?text=Reims') no-repeat;
+}
+
+#rc-lens {
+    background: url('https://via.placeholder.com/80x80.png?text=Lens') no-repeat;
+}
+
+.draw {
+    background-color: #333;
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.draw p {
+    color: #fff;
+    font-size: 1.5em;
+}
+    </style>
 </head>
 
 <body>
+  
     <header>
         <div class="container">
         <nav class="navbar">
@@ -49,16 +195,8 @@
     <main>
         <div class="container">
             <div class="grid-container">
-                <div class="scoresnav-container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search for teams, matches, or regions...">
-                    </div>
-                    <div class="scoresnav">
-                        <div class="live">LIVE</div>
-                    </div>
-                </div>
-              
                 <div class="sidebar">
+                  <div class="back"><a href="index.html">Back to all games</a></div>
                   <h3>REGION</h3>
                   <ul>
                     <li>England</li>
@@ -79,43 +217,55 @@
                 </div>
             
                 <div class="content">
-                  <h3>League Stage</h3>
-                  <div class="match">
-                    <div class="match-time">18:45</div>
-                    <div class="teams">FK Crvena Zvezda vs VfB Stuttgart</div>
-                    <div class="star">★</div>
+                  <div class="match-section">
+                    <div class="match-header">
+                      <div>
+                        <div class="league">Premier League</div>
+                        <div class="region">South Africa</div>
+                      </div>
+                      <div>★</div>
+                    </div>
+                    <div class="match-content">
+                      <div class="teams">
+                        <div class="team">
+                          <img src="team1_logo.png" alt="Team 1 Logo">
+                          <div>Cape Town City FC</div>
+                        </div>
+                        <div class="time">18:30</div>
+                        <div class="team">
+                          <img src="team2_logo.png" alt="Team 2 Logo">
+                          <div>Polokwane City</div>
+                        </div>
+                      </div>
+                      <div class="date">Today</div>
+                    </div>
+                    <div class="info">
+                      <div class="info-tab">Info</div>
+                      <div class="info-tab">Table</div>
+                      <div class="info-tab">H2H</div>
+                    </div>
+                    <div class="match-footer">
+                      <div>
+                        <span class="date">27 Nov 2024</span>
+                        <span class="stadium">Athlone Stadium</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="match">
-                    <div class="match-time">18:45</div>
-                    <div class="teams">Sturm Graz vs Girona</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">AS Monaco vs Benfica</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Aston Villa vs Juventus</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Bologna vs Lille</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Celtic vs Club Brugge</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Dinamo Zagreb</div>
-                    <div class="star">★</div>
-                  </div>
+                  <div class="team-selector">
+                    <div class="team">
+                        <div class="shirt" id="stade-reims"></div>
+                        <p>STADE REIMS</p>
+                    </div>
+                    <div class="draw">
+                        <p>Draw</p>
+                    </div>
+                    <div class="team">
+                        <div class="shirt" id="rc-lens"></div>
+                        <p>RC LENS</p>
+                    </div>
                 </div>
+                </div>
+                
               </div>
             
               <script>

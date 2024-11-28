@@ -1,0 +1,92 @@
+{
+    "matches": [
+      {
+        "id": 1,
+        "team1": {
+          "name": "FK Crvena Zvezda",
+          "logo": "crvena_zvezda_logo.png",
+          "region": "Serbia",
+          "players": [
+            { "name": "Player1", "number": 10 },
+            { "name": "Player2", "number": 9 },
+            { "name": "Player3", "number": 7 }
+          ]
+        },
+        "team2": {
+          "name": "VfB Stuttgart",
+          "logo": "stuttgart_logo.png",
+          "region": "Germany",
+          "players": [
+            { "name": "PlayerA", "number": 11 },
+            { "name": "PlayerB", "number": 8 },
+            { "name": "PlayerC", "number": 6 }
+          ]
+        },
+        "time": "18:45",
+        "date": "2024-11-27",
+        "result": null,
+        "league": "Champions League",
+        "location": "Belgrade, Serbia",
+        "isFavoriteMatch": false
+      },
+      {
+        "id": 2,
+        "team1": {
+          "name": "AS Monaco",
+          "logo": "monaco_logo.png",
+          "region": "France",
+          "players": [
+            { "name": "PlayerX", "number": 10 },
+            { "name": "PlayerY", "number": 7 },
+            { "name": "PlayerZ", "number": 5 }
+          ]
+        },
+        "team2": {
+          "name": "Benfica",
+          "logo": "benfica_logo.png",
+          "region": "Portugal",
+          "players": [
+            { "name": "Player1", "number": 12 },
+            { "name": "Player2", "number": 4 },
+            { "name": "Player3", "number": 9 }
+          ]
+        },
+        "time": "21:00",
+        "date": "2024-11-27",
+        "result": "1-3",
+        "league": "Champions League",
+        "location": "Monaco, France",
+        "isFavoriteMatch": true
+      },
+      {
+        "id": 3,
+        "team1": {
+          "name": "Aston Villa",
+          "logo": "aston_villa_logo.png",
+          "region": "England",
+          "players": [
+            { "name": "PlayerM", "number": 3 },
+            { "name": "PlayerN", "number": 15 },
+            { "name": "PlayerO", "number": 18 }
+          ]
+        },
+        "team2": {
+          "name": "Juventus",
+          "logo": "juventus_logo.png",
+          "region": "Italy",
+          "players": [
+            { "name": "PlayerD", "number": 10 },
+            { "name": "PlayerE", "number": 13 },
+            { "name": "PlayerF", "number": 2 }
+          ]
+        },
+        "time": "21:00",
+        "date": "2024-11-27",
+        "result": null,
+        "league": "Champions League",
+        "location": "Birmingham, England",
+        "isFavoriteMatch": false
+      }
+    ]
+  }
+  
