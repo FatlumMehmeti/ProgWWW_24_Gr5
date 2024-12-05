@@ -1,0 +1,184 @@
+/* Main Section */
+main {
+    padding: 20px 0;
+}
+
+.support h2 {
+    text-align: center;
+    font-size: 50px;
+    color: #d71010;
+}
+
+.contact-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-info,
+.contact-form {
+    width: 48%;
+    background: #001e28;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: #333;
+    font-size: 24px;
+
+}
+
+.contact-info p a {
+    color: #ff1e00;
+    text-decoration: none;
+}
+
+.contact-info p a:hover {
+    text-decoration: underline;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #164475;
+}
+
+/* Support Details */
+.support-details {
+    margin-top: 40px;
+}
+
+.support-blocks {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.support-blocks .block {
+    width: 30%;
+    background: #001e28;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.support-blocks .block h4 {
+    margin-bottom: 10px;
+    color: #6f6565;
+}
+
+.support-blocks .block p {
+    color: #b6b6b6;
+}
+.support-blocks .block:hover {
+    background: #001e2870;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* Support Hours Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ff0000;
+    animation: borderAnimation 3s infinite;
+}
+
+th {
+    background: #333;
+    color: #989191;
+    animation: headerAnimation 3s infinite;
+
+}
+
+td {
+    background: #390c0c;
+    animation: cellAnimation 3s infinite;
+
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #ff0000;
+    }
+    25% {
+        border-color: rgb(1, 48, 67);
+    }
+    50% {
+        border-color: #99ff00;
+    }
+    75% {
+        border-color: #bf00ff;
+    }
+    100% {
+        border-color: #ffff00;
+    }
+}
+
+@keyframes headerAnimation {
+    0% {
+        background: #333;
+    }
+    25% {
+        background: rgb(16, 145, 196);
+    }
+    50% {
+        background: #5f9c03b7;
+    }
+    75% {
+        background: #bf00ff75;
+    }
+    100% {
+        background: #ffff006d;
+    }
+}
+
+@keyframes cellAnimation {
+    0% {
+        background: #fd0202;
+    }
+    25% {
+        background: #02c2fd;
+    }
+    50% {
+        background: #66fd02db;
+    }
+    75% {
+        background: #f502fd;
+    }
+    100% {
+        background: #f5fd02;
+    }
+}

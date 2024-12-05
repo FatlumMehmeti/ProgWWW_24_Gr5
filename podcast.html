@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Football Live Scores, Latest Football Results | SaMeSa</title>
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <link rel="stylesheet" href="assets/CSS/navstyle.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css" />
+    <link rel="stylesheet" href="assets/CSS/podcasts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css" />
+    <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="assets/Img/SaMeSa logo.png" alt="Logo">
+                    <h1>SaMeSa</h1>
+                </div>
+                <div class="nav-container">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="podcast.html">Podcast</a></li>
+                    </ul>
+                </div>
+                <div class="nav-icons">
+                    <div class="dark-light-toggle" onclick="toggleTheme()">
+                        <i class="ri-contrast-2-line" id="modeIcon"></i>
+                    </div>
+                    <div class="translate-toggle" onclick="openTranslate()">
+                        <i class="ri-translate"></i>
+                    </div>
+                    <div id="google_translate_element" style="display: none;"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main id="podcasts">
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="results-archive.html">Results Archive</a></li>
+              <li><a href="stats.html">Team/Player Stats</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+  
+          <!-- Social Media Section -->
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="ri-facebook-box-fill"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-youtube-fill"></i></a>
+            </div>
+          </div>
+  
+          <!-- Contact Information Section -->
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+              Email:
+              <a href="mailto:support@sportsliveupdates.com"
+                >support@sportsliveupdates.com</a
+              >
+            </p>
+            <p>Phone: +123 456 7890</p>
+          </div>
+  
+          <!-- Newsletter Signup Section -->
+          <div class="footer-section">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form action="#" method="POST">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+  
+          <!-- Legal Information Section -->
+          <div class="footer-section legal-links">
+            <ul>
+              <li>
+                <a href="/assets/PDFs/Privacy_Policy.pdf" target="_blank"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li><a href="terms_of_service.html">Terms of Service</a></li>
+              <li><a href="#" id="cookiePolicyLink">Cookie Policy</a></li>
+              <li><a href="about_us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom Text -->
+        <div class="footer-bottom">
+          <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
+        </div>
+      </footer>
+      <!-- Modal HTML -->
+      <div id="cookiePolicyModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">About Your Privacy</div>
+          <div class="modal-body">
+            <p>
+              We process your data to deliver content or advertisements and
+              measure the delivery of such content or advertisements to extract
+              insights about our website. We share this information with our
+              partners on the basis of consent. You may exercise your right to
+              consent based on a specific purpose below or at a partner level in
+              the link under each purpose. These choices will be signaled to our
+              vendors participating in the Transparency and Consent Framework.
+            </p>
+            <div class="cookie-options">
+              <div class="cookie-items">
+                <label>Strictly Necessary Cookies</label>
+                <input type="checkbox" checked disabled />
+              </div>
+              <div class="cookie-items">
+                <label>Performance Cookies</label>
+                <input type="checkbox" />
+              </div>
+              <div class="cookie-items">
+                <label>Targeting Cookies</label>
+                <input type="checkbox" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="reject" onclick="rejectCookies()">Reject All</button>
+            <button class="accept" onclick="acceptCookies()">Allow All</button>
+          </div>
+        </div>
+      </div>
+  
+
+    <script>
+        const clientId = '4094f00116a84ce88d2d392c22d70e0d';
+        const clientSecret = '4485030920fd463eb2858908ebcf6601';
+        const accessTokenUrl = 'https://accounts.spotify.com/api/token';
+        const podcastsEndpoint = 'https://api.spotify.com/v1/search?q=football+podcasts&type=show';
+
+        async function getAccessToken() {
+            const response = await fetch(accessTokenUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
+            });
+            const data = await response.json();
+            return data.access_token;
+        }
+
+        async function fetchPodcasts() {
+            const accessToken = await getAccessToken();
+            const response = await fetch(podcastsEndpoint, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                },
+            });
+            const data = await response.json();
+            return data.shows.items;
+        }
+
+        async function fetchNewestEpisodes(showId) {
+            const accessToken = await getAccessToken();
+            const response = await fetch(`https://api.spotify.com/v1/shows/${showId}/episodes?limit=1`, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                },
+            });
+            const data = await response.json();
+            return data.items[0];
+        }
+
+        async function displayPodcasts() {
+            const podcasts = await fetchPodcasts();
+            const container = document.getElementById('podcasts');
+
+            for (const podcast of podcasts) {
+                const newestEpisode = await fetchNewestEpisodes(podcast.id);
+
+                const div = document.createElement('div');
+                div.classList.add('podcast-item');
+                div.innerHTML = `
+                        <iframe src="https://open.spotify.com/embed/episode/${newestEpisode.id}" allow="encrypted-media"></iframe>
+                  `;
+                container.appendChild(div);
+            }
+        }
+        displayPodcasts();
+    </script>
+</body>
+</html>

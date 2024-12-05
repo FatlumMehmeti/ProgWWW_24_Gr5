@@ -86,7 +86,7 @@
 /* Legal Links Styling */
 .legal-links ul {
     list-style-type: none;
-    padding: 0 30%;
+    padding: 0 27%;
     display: flex;
     gap: 15px;
 }

@@ -10,13 +10,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     z-index: 999;
 }
 
 .logo {
     height: 90px;
-    /* width: 90px; */
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -43,17 +41,11 @@
     padding: 0;
     gap: 15px;
 }
-
-.nav-container ul li {
-    
-}
-
 .nav-container ul li a {
     color: #c8cdcd;
     text-decoration: none;
     font-size: 18px;
     font-family: "Orbitron", sans-serif;
-    /* padding: 10px 15px; */
     transition: color 0.3s ease;
 }
 

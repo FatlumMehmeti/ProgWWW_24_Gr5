@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - SaMeSa</title>
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <link rel="stylesheet" href="assets/CSS/navstyle.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css" />
+    <link rel="stylesheet" href="assets/CSS/support.css">
+    <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <header>
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <img src="assets/Img/SaMeSa logo.png" alt="Logo" />
+              <h1>SaMeSa</h1>
+            </div>
+            <div class="nav-container">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+              </ul>
+            </div>
+            <div class="nav-icons">
+              <!-- Dark/Light Mode Toggle -->
+              <div class="dark-light-toggle" onclick="toggleTheme()">
+                <i class="ri-contrast-2-line" id="modeIcon"></i>
+              </div>
+              <!-- Language Translate Option -->
+              <div class="translate-toggle" onclick="openTranslate()">
+                <i class="ri-translate"></i>
+              </div>
+              <div id="google_translate_element" style="display: none"></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    <main>
+        <section class="support">
+            <div class="container">
+                <h2>Support</h2>
+                <p>If you have any questions or need assistance, feel free to contact us through the form below or by using the provided contact details.</p>
+
+                <div class="contact-options">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Email: <a href="mailto:support@samesa.com">support@samesa.com</a></p>
+                        <p>Phone: +123 456 789</p>
+                        <p>Address: 123 Football Street, Soccer City</p>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Contact Us</h3>
+                        <form action="#" method="post">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="support-details">
+                    <h3>Support Details</h3>
+                    <div class="support-blocks">
+                        <div class="block">
+                            <h4>FAQ</h4>
+                            <p>Find answers to frequently asked questions.</p>
+                        </div>
+                        <div class="block">
+                            <h4>Live Chat</h4>
+                            <p>Connect with our support team instantly.</p>
+                        </div>
+                        <div class="block">
+                            <h4>Community Forum</h4>
+                            <p>Join discussions with other SaMeSa users.</p>
+                        </div>
+                    </div>
+
+                    <h3>Support Hours</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday - Friday</td>
+                                <td>9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>10:00 AM - 4:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="results-archive.html">Results Archive</a></li>
+              <li><a href="stats.html">Team/Player Stats</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+  
+          <!-- Social Media Section -->
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="ri-facebook-box-fill"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-youtube-fill"></i></a>
+            </div>
+          </div>
+  
+          <!-- Contact Information Section -->
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>
+              Email:
+              <a href="mailto:support@sportsliveupdates.com"
+                >support@sportsliveupdates.com</a
+              >
+            </p>
+            <p>Phone: +123 456 7890</p>
+          </div>
+  
+          <!-- Newsletter Signup Section -->
+          <div class="footer-section">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form action="#" method="POST">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+  
+          <!-- Legal Information Section -->
+          <div class="footer-section legal-links">
+            <ul>
+              <li>
+                <a href="/assets/PDFs/Privacy_Policy.pdf" target="_blank"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li><a href="terms_of_service.html">Terms of Service</a></li>
+              <li><a href="#" id="cookiePolicyLink">Cookie Policy</a></li>
+              <li><a href="about_us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom Text -->
+        <div class="footer-bottom">
+          <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
+        </div>
+      </footer>
+</body>
+</html>

@@ -64,4 +64,41 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   });
+
+  // Get modal and link elements
+  const modal = document.getElementById('cookiePolicyModal');
+  const cookiePolicyLink = document.getElementById('cookiePolicyLink');
+
+  // Show modal on link click
+  cookiePolicyLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      modal.style.display = 'block';
+  });
+
+  // Functions for accept and reject buttons
+  function acceptCookies() {
+      alert('You have accepted cookies.');
+      modal.style.display = 'none';
+  }
+
+  function rejectCookies() {
+      alert('You have rejected cookies.');
+      modal.style.display = 'none';
+  }
+
+  // Disable clicks outside the modal
+  modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            event.stopPropagation();
+        }
+    });
+    // Enable checkbox on label click
+    document.querySelectorAll('.cookie-options .cookie-items').forEach(option => {
+        option.addEventListener('click', () => {
+            const checkbox = option.querySelector('input[type="checkbox"]');
+            if (!checkbox.disabled) {
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+    });
   

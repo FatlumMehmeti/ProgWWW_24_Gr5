@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -8,206 +8,330 @@
     <link rel="stylesheet" href="assets/CSS/style.css" />
     <link rel="stylesheet" href="assets/CSS/navstyle.css" />
     <link rel="stylesheet" href="assets/CSS/footer.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
+    />
     <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container">
+      <div class="container">
         <nav class="navbar">
-                <div class="logo">
-                    <img src="assets/Img/SaMeSa logo.png" alt="Logo">
-                    <h1>logo</h1>
-                </div>
-                <div class="nav-container">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="live-scores.html">Live Scores</a></li>
-                        <li><a href="results-archive.html">Results Archive</a></li>
-                        <li><a href="stats.html">Team/Player Stats</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="nav-icons">
-                    <!-- Dark/Light Mode Toggle -->
-                    <div class="dark-light-toggle" onclick="toggleTheme()">
-                        <i class="ri-contrast-2-line" id="modeIcon"></i>
-                    </div>
-                    <!-- Language Translate Option -->
-                    <div class="translate-toggle" onclick="openTranslate()">
-                        <i class="ri-translate"></i>
-                    </div>
-                    <div id="google_translate_element" style="display: none;"></div>
-                </div>
-            </nav>
-        </div>
+          <div class="logo">
+            <img src="assets/Img/SaMeSa logo.png" alt="Logo" />
+            <h1>SaMeSa</h1>
+          </div>
+          <div class="nav-container">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="podcast.html">Podcast</a></li>
+            </ul>
+          </div>
+          <div class="nav-icons">
+            <!-- Dark/Light Mode Toggle -->
+            <div class="dark-light-toggle" onclick="toggleTheme()">
+              <i class="ri-contrast-2-line" id="modeIcon"></i>
+            </div>
+            <!-- Language Translate Option -->
+            <div class="translate-toggle" onclick="openTranslate()">
+              <i class="ri-translate"></i>
+            </div>
+            <div id="google_translate_element" style="display: none"></div>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <div class="container">
-            <div class="grid-container">
-                <div class="scoresnav-container">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search for teams, matches, or regions...">
-                    </div>
-                    <div class="scoresnav">
-                        <div class="live">LIVE</div>
-                    </div>
+      <div class="container">
+        <div class="grid-container">
+          <div class="scoresnav-container">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Search for teams, matches, or regions..."
+              />
+            </div>
+            <div class="scoresnav">
+              <div class="live">LIVE</div>
+            </div>
+          </div>
+          <aside class="sidebar">
+            <h4>Pinned Leagues</h4>
+            <ul>
+              <li><i class="flag-icon"></i> Premier League</li>
+              <li><i class="flag-icon"></i> Ligue 1</li>
+              <li><i class="flag-icon"></i> Bundesliga</li>
+              <li><i class="flag-icon"></i> Serie A</li>
+              <li><i class="flag-icon"></i> Eredivisie</li>
+              <li><i class="flag-icon"></i> LaLiga</li>
+              <li><i class="flag-icon"></i> Champions League</li>
+            </ul>
+          </aside>
+
+          <div class="content">
+            <div id="liveMatches" class="match">
+              <!-- Matches will be loaded dynamically -->
+              <div class="teams">
+                <span class="match-time">${time}</span>
+                <div class="team">
+                  <div class="img"><img src="assets/Img/logo/image.png" class="team-logo" /></div>
+                  <div class="tt">Test</div>
                 </div>
-              
-                <div class="sidebar">
-                  <h3>REGION</h3>
-                  <ul>
-                    <li>England</li>
-                    <li>Champions League</li>
-                    <li>Spain</li>
-                    <li>Italy</li>
-                    <li>Germany</li>
-                  </ul>
-            
-                  <h3>TEAMS</h3>
-                  <ul>
-                    <li>Manchester United</li>
-                    <li>Liverpool</li>
-                    <li>Arsenal</li>
-                    <li>Manchester City</li>
-                    <li>Real Madrid</li>
-                  </ul>
+                <div class="team">
+                  <div class="img"><img src="assets/Img/logo/img2.png" alt="${awayTeam}" class="team-logo" /> </div>
+                  <div class="tt">${awayTeam}</div>
                 </div>
-            
-                <div class="content">
-                  <h3>League Stage</h3>
-                  <div class="match">
-                    <div class="match-time">18:45</div>
-                    <div class="teams">FK Crvena Zvezda vs VfB Stuttgart</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">18:45</div>
-                    <div class="teams">Sturm Graz vs Girona</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">AS Monaco vs Benfica</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Aston Villa vs Juventus</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Bologna vs Lille</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Celtic vs Club Brugge</div>
-                    <div class="star">★</div>
-                  </div>
-                  <div class="match">
-                    <div class="match-time">21:00</div>
-                    <div class="teams">Dinamo Zagreb</div>
-                    <div class="star">★</div>
-                  </div>
+             </div>
+              <div class="teams">
+                <span class="match-time">${time}</span>
+                <div class="team">
+                  <div class="img"><img src="assets/Img/logo/image.png" class="team-logo" /></div>
+                  <div class="tt">Test</div>
                 </div>
-              </div>
-            
-              <script>
-                const navbar = document.querySelector('.scoresnav');
-            
-                // Get the current date
-                const today = new Date();
-                const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-            
-                // Generate 5 days dynamically
-                for (let i = -2; i <= 2; i++) {
-                  const date = new Date(today);
-                  date.setDate(today.getDate() + i);
-            
-                  const dayName = dayNames[date.getDay()];
-                  const dayDate = date.getDate().toString().padStart(2, '0') + ' ' + date.toLocaleString('default', { month: 'short' }).toUpperCase();
-            
-                  const div = document.createElement('div');
-                  div.classList.add('scoresnav-item');
-            
-                  if (i === 0) {
-                    div.classList.add('today');
-                    div.innerHTML = `<span>${dayName}</span><div class="date">TODAY</div>`;
-                  } else {
-                    div.innerHTML = `<span>${dayName}</span><div class="date">${dayDate}</div>`;
-                  }
-            
-                  navbar.appendChild(div);
-                }
-              </script>
+                <div class="team">
+                  <div class="img"><img src="assets/Img/logo/img2.png" alt="${awayTeam}" class="team-logo" /> </div>
+                  <div class="tt">${awayTeam}</div>
+                </div>
+             </div>
+            </div>
+          </div>
         </div>
+        <script>
+          const navbar = document.querySelector(".scoresnav");
+
+          // Get the current date
+          const today = new Date();
+          const dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+          // Generate 5 days dynamically
+          for (let i = -2; i <= 2; i++) {
+            const date = new Date(today);
+            date.setDate(today.getDate() + i);
+
+            const dayName = dayNames[date.getDay()];
+            const dayDate =
+              date.getDate().toString().padStart(2, "0") +
+              " " +
+              date.toLocaleString("default", { month: "short" }).toUpperCase();
+
+            const div = document.createElement("div");
+            div.classList.add("scoresnav-item");
+
+            if (i === 0) {
+              div.classList.add("today");
+              div.innerHTML = `<div>${dayName}</span><div class="date">TODAY</div>`;
+            } else {
+              div.innerHTML = `<span>${dayName}</span><div class="date">${dayDate}</div>`;
+            }
+
+            navbar.appendChild(div);
+          }
+        </script>
+      </div>
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <!-- Quick Links Section -->
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="results-archive.html">Results Archive</a></li>
-                    <li><a href="stats.html">Team/Player Stats</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <!-- Social Media Section -->
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="ri-facebook-box-fill"></i></a>
-                    <a href="#"><i class="ri-twitter-fill"></i></a>
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-youtube-fill"></i></a>
-                </div>
-            </div>
-            
-            <!-- Contact Information Section -->
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:support@sportsliveupdates.com">support@sportsliveupdates.com</a></p>
-                <p>Phone: +123 456 7890</p>
-            </div>
-            
-            <!-- Newsletter Signup Section -->
-            <div class="footer-section">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form action="#" method="POST">
-                    <input type="email" placeholder="Enter your email" required />
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-            
-            <!-- Legal Information Section -->
-            <div class="footer-section legal-links">
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">About Us</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        
-        <!-- Footer Bottom Text -->
-        <div class="footer-bottom">
-            <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
-        </div>
-    </footer>    
 
-    <script src="assets/js/script.js"></script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a href="mailto:support@sportsliveupdates.com"
+              >support@sportsliveupdates.com</a
+            >
+          </p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+
+        <!-- Newsletter Signup Section -->
+        <div class="footer-section">
+          <h3>Subscribe to Our Newsletter</h3>
+          <form action="#" method="POST">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Legal Information Section -->
+        <div class="footer-section legal-links">
+          <ul>
+            <li>
+              <a href="/assets/PDFs/Privacy_Policy.pdf" target="_blank"
+                >Privacy Policy</a
+              >
+            </li>
+            <li><a href="terms_of_service.html">Terms of Service</a></li>
+            <li><a href="#" id="cookiePolicyLink">Cookie Policy</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Text -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Modal HTML -->
+    <div id="cookiePolicyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">About Your Privacy</div>
+        <div class="modal-body">
+          <p>
+            We process your data to deliver content or advertisements and
+            measure the delivery of such content or advertisements to extract
+            insights about our website. We share this information with our
+            partners on the basis of consent. You may exercise your right to
+            consent based on a specific purpose below or at a partner level in
+            the link under each purpose. These choices will be signaled to our
+            vendors participating in the Transparency and Consent Framework.
+          </p>
+          <div class="cookie-options">
+            <div class="cookie-items">
+              <label>Strictly Necessary Cookies</label>
+              <input type="checkbox" checked disabled />
+            </div>
+            <div class="cookie-items">
+              <label>Performance Cookies</label>
+              <input type="checkbox" />
+            </div>
+            <div class="cookie-items">
+              <label>Targeting Cookies</label>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="reject" onclick="rejectCookies()">Reject All</button>
+          <button class="accept" onclick="acceptCookies()">Allow All</button>
+        </div>
+      </div>
+    </div>
+
+   <!-- <script>
+      const apiKey = "20f0f4092ddf3663b052ce1061bc2dd5"; // Replace with your actual API key
+
+      async function fetchLiveMatches() {
+        const url = "https://v3.football.api-sports.io/fixtures?live=all";
+        const options = {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": apiKey,
+          },
+        };
+
+        try {
+          const response = await fetch(url, options);
+          const data = await response.json();
+
+          if (data.response && data.response.length > 0) {
+            displayMatches(data.response);
+          } else {
+            document.getElementById("liveMatches").innerHTML =
+              "<p>No live matches currently available.</p>";
+          }
+        } catch (error) {
+          console.error("Error fetching live matches:", error);
+          document.getElementById("liveMatches").innerHTML =
+            "<p>Error loading live matches.</p>";
+        }
+      }
+
+      function displayMatches(matches) {
+        const container = document.getElementById("liveMatches");
+        container.innerHTML = ""; // Clear previous matches
+
+        const leagues = {};
+
+        matches.forEach((match) => {
+          const leagueName = match.league.name;
+
+          if (!leagues[leagueName]) {
+            leagues[leagueName] = [];
+          }
+
+          leagues[leagueName].push(match);
+        });
+
+        Object.keys(leagues).forEach((leagueName) => {
+          const leagueHeader = document.createElement("h4");
+          leagueHeader.textContent = leagueName;
+          container.appendChild(leagueHeader);
+
+          leagues[leagueName].forEach((match) => {
+            const matchElement = document.createElement("div");
+            matchElement.classList.add("match");
+
+            const homeTeam = match.teams.home.name;
+            const awayTeam = match.teams.away.name;
+            const homeLogo = match.teams.home.logo;
+            const awayLogo = match.teams.away.logo;
+            const score = `${match.goals.home} - ${match.goals.away}`;
+            const time = match.fixture.date
+              ? new Date(match.fixture.date).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })
+              : "N/A";
+
+            matchElement.innerHTML = `
+            <div class="teams">
+                <span class="match-time">${time}</span>
+                <div class="team">
+                  <div class="img"><img src="${homeLogo}" alt="${homeTeam}" class="team-logo" /></div>
+                  <div class="tt">${homeTeam}</div>
+                </div>
+                <div class="team">
+                  <div class="img"><img src="${awayLogo}" alt="${awayTeam}" class="team-logo" /> </div>
+                  <div class="tt">${awayTeam}</div>
+                </div>
+             </div>
+                        `;
+            // <div class="score">${score}</div>
+            container.appendChild(matchElement);
+          });
+        });
+      }
+
+      // Fetch live matches on page load
+      document.addEventListener("DOMContentLoaded", fetchLiveMatches);
+    </script> -->
+  </body>
 </html>
