@@ -21,6 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="assets/JS/script.js"></script>
+   
   </head>
 
   <body>
@@ -81,30 +83,8 @@
           </aside>
 
           <div class="content">
-            <div id="liveMatches" class="match">
-              <!-- Matches will be loaded dynamically -->
-              <div class="teams">
-                <span class="match-time">${time}</span>
-                <div class="team">
-                  <div class="img"><img src="assets/Img/logo/image.png" class="team-logo" /></div>
-                  <div class="tt">Test</div>
-                </div>
-                <div class="team">
-                  <div class="img"><img src="assets/Img/logo/img2.png" alt="${awayTeam}" class="team-logo" /> </div>
-                  <div class="tt">${awayTeam}</div>
-                </div>
-             </div>
-              <div class="teams">
-                <span class="match-time">${time}</span>
-                <div class="team">
-                  <div class="img"><img src="assets/Img/logo/image.png" class="team-logo" /></div>
-                  <div class="tt">Test</div>
-                </div>
-                <div class="team">
-                  <div class="img"><img src="assets/Img/logo/img2.png" alt="${awayTeam}" class="team-logo" /> </div>
-                  <div class="tt">${awayTeam}</div>
-                </div>
-             </div>
+            <div id="liveMatches" >
+              <div class="match"></div>
             </div>
           </div>
         </div>
@@ -243,7 +223,95 @@
         </div>
       </div>
     </div>
+    <script> 
+      async function fetchLiveMatchesFromLocalFile() {
+    const localFilePath = "assets/data/data.json"; // Update with the correct path
 
+    try {
+        // Fetch the local JSON file
+        const response = await fetch(localFilePath);
+        const data = await response.json();
+
+        // Print the data to the console for debugging
+        console.log("Loaded data from local file:", data);
+
+        // Check if the response contains matches
+        if (data.response && data.response.length > 0) {
+            displayMatches(data.response);
+        } else {
+            document.getElementById("liveMatches").innerHTML =
+                "<p>No live matches currently available.</p>";
+        }
+    } catch (error) {
+        console.error("Error loading matches from local file:", error);
+        document.getElementById("liveMatches").innerHTML =
+            "<p>Error loading matches from the local file.</p>";
+    }
+}
+
+function displayMatches(matches) {
+    const container = document.getElementById("liveMatches");
+    container.innerHTML = ""; // Clear previous matches
+
+    const leagues = {};
+
+    matches.forEach((match) => {
+        const leagueName = match.league.name;
+        const leagueLogo = match.league.logo;
+
+        if (!leagues[leagueName]) {
+            leagues[leagueName] = [];
+        }
+
+        leagues[leagueName].push(match);
+    });
+
+    Object.keys(leagues).forEach((leagueName) => {
+        const leagueHeader = document.createElement("div");
+        
+        leagueHeader.textContent = leagueName;
+        container.appendChild(leagueHeader);
+
+        leagues[leagueName].forEach((match) => {
+            const matchElement = document.createElement("div");
+            matchElement.classList.add("match");
+
+            const homeTeam = match.teams.home.name;
+            const awayTeam = match.teams.away.name;
+            const homeLogo = match.teams.home.logo;
+            const awayLogo = match.teams.away.logo;
+            const score = `${match.goals.home} - ${match.goals.away}`;
+            const time = match.fixture.date
+                ? new Date(match.fixture.date).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                  })
+                : "N/A";
+
+            matchElement.innerHTML = `
+            <div class="teams">
+              <div class="team">
+                <div class="tt">${homeTeam}</div>
+                <div class="img"><img src="${homeLogo}" alt="${homeTeam}" class="team-logo" /></div>
+                </div>
+                <div class="match-time-container">
+                <span class="match-time">${time}</span>
+                <span class="score">${score}</span>
+                </div>
+                <div class="team">
+                  <div class="img"><img src="${awayLogo}" alt="${awayTeam}" class="team-logo" /></div>
+                  <div class="tt">${awayTeam}</div>
+                </div>
+            </div>`;
+            container.appendChild(matchElement);
+        });
+    });
+}
+
+// Call the function to fetch matches from the local file
+document.addEventListener("DOMContentLoaded", fetchLiveMatchesFromLocalFile);
+
+    </script>
    <!-- <script>
       const apiKey = "20f0f4092ddf3663b052ce1061bc2dd5"; // Replace with your actual API key
 
@@ -260,6 +328,8 @@
         try {
           const response = await fetch(url, options);
           const data = await response.json();
+          console.log( data);
+
 
           if (data.response && data.response.length > 0) {
             displayMatches(data.response);
@@ -273,7 +343,7 @@
             "<p>Error loading live matches.</p>";
         }
       }
-
+         /*display the matches that are beiing played*//
       function displayMatches(matches) {
         const container = document.getElementById("liveMatches");
         container.innerHTML = ""; // Clear previous matches

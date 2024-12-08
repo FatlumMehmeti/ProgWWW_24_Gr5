@@ -1,8 +1,10 @@
 .site-footer {
-    background-color: #052b3a9d;
+    background-color: #00010b;
     color: #c8cdcd;
     padding: 40px 20px;
     font-family: "Inter", sans-serif;
+    border-top: 1px solid rgba(0, 255, 68, 0.5);
+    ;
 }
 
 .site-footer .container {
@@ -107,3 +109,112 @@
     color: #aaa;
     font-size: 14px;
 }
+
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+  
+  .modal-content {
+    background-color: #1c1c1c;
+    margin: 5% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .modal-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f5f5f5;
+  }
+  
+  .modal-body {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dcdcdc;
+    margin-bottom: 20px;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .modal-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .modal-footer .accept {
+    background-color: #ff0101;
+    color: white;
+  }
+  
+  .modal-footer .reject {
+    background-color: #510000;
+    color: white;
+  }
+  
+  .modal-footer .accept:hover {
+    background-color: #e60101e4;
+  }
+  
+  .modal-footer .reject:hover {
+    background-color: #510000b6;
+  }
+  
+  .cookie-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .cookie-options div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cookie-options label {
+    font-size: 1rem;
+    color: #f5f5f5;
+  }
+  .cookie-items:hover {
+  background-color: #3c3d3d30;
+  transition: .4s;
+  cursor: pointer;
+  }
+  
+  
+  .cookie-options input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+  
+  body.modal-open {
+      overflow: hidden;
+  }
