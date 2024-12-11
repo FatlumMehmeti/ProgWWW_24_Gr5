@@ -20,6 +20,15 @@
     border: none;
     border-radius: 10px;
 }
+.light-mode .podcast-item {
+  box-shadow: 0 6px 12px rgb(81, 255, 0);
+  background-color: #252525;
+}
+
+.light-mode .podcast-item:hover {
+  box-shadow: 0 6px 12px rgb(255, 221, 0);
+  background-color: #252525;
+}
   
 .podcast-item:hover {
     box-shadow: 0 6px 12px rgb(0, 102, 255);

@@ -12,6 +12,9 @@
     padding: 0 20px;
     z-index: 999;
 }
+.logoja{
+    font-family: "Orbitron", sans-serif;
+}
 
 .logo {
     height: 90px;

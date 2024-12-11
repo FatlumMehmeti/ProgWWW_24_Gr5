@@ -101,4 +101,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-  
+ // JavaScript for handling form submission
+ document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+  const email = document.getElementById('emailInput').value; // Get the email input value
+  alert(`You have been subscribed with this email: ${email}`); // Show alert with the email
+});

@@ -12,6 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
     />
+    <script src="https://kit.fontawesome.com/4e8c1b8130.js" crossorigin="anonymous"></script>
     <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
@@ -22,7 +23,8 @@
       rel="stylesheet"
     />
     <script src="assets/JS/script.js"></script>
-   
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   </head>
 
   <body>
@@ -31,7 +33,7 @@
         <nav class="navbar">
           <div class="logo">
             <img src="assets/Img/SaMeSa logo.png" alt="Logo" />
-            <h1>SaMeSa</h1>
+            <h1 class="logoja">SaMeSa</h1>
           </div>
           <div class="nav-container">
             <ul>
@@ -60,7 +62,8 @@
         <div class="grid-container">
           <div class="scoresnav-container">
             <div class="search-bar">
-              <input
+              <i class="ri-search-line"></i>
+               <input
                 type="text"
                 placeholder="Search for teams, matches, or regions..."
               />
@@ -88,6 +91,8 @@
             </div>
           </div>
         </div>
+        <button id="backToTop" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+
         <script>
           const navbar = document.querySelector(".scoresnav");
 
@@ -158,15 +163,15 @@
           <p>Phone: +123 456 7890</p>
         </div>
 
-        <!-- Newsletter Signup Section -->
         <div class="footer-section">
           <h3>Subscribe to Our Newsletter</h3>
-          <form action="#" method="POST">
-            <input type="email" placeholder="Enter your email" required />
+          <form id="newsletterForm">
+            <input type="email" id="emailInput" placeholder="Enter your email" required />
             <button type="submit">Subscribe</button>
           </form>
         </div>
 
+        
         <!-- Legal Information Section -->
         <div class="footer-section legal-links">
           <ul>
@@ -223,185 +228,7 @@
         </div>
       </div>
     </div>
-    <script> 
-      async function fetchLiveMatchesFromLocalFile() {
-    const localFilePath = "assets/data/data.json"; // Update with the correct path
+    <script src="assets/JS/djson.js"></script>
 
-    try {
-        // Fetch the local JSON file
-        const response = await fetch(localFilePath);
-        const data = await response.json();
-
-        // Print the data to the console for debugging
-        console.log("Loaded data from local file:", data);
-
-        // Check if the response contains matches
-        if (data.response && data.response.length > 0) {
-            displayMatches(data.response);
-        } else {
-            document.getElementById("liveMatches").innerHTML =
-                "<p>No live matches currently available.</p>";
-        }
-    } catch (error) {
-        console.error("Error loading matches from local file:", error);
-        document.getElementById("liveMatches").innerHTML =
-            "<p>Error loading matches from the local file.</p>";
-    }
-}
-
-function displayMatches(matches) {
-    const container = document.getElementById("liveMatches");
-    container.innerHTML = ""; // Clear previous matches
-
-    const leagues = {};
-
-    matches.forEach((match) => {
-        const leagueName = match.league.name;
-        const leagueLogo = match.league.logo;
-
-        if (!leagues[leagueName]) {
-            leagues[leagueName] = [];
-        }
-
-        leagues[leagueName].push(match);
-    });
-
-    Object.keys(leagues).forEach((leagueName) => {
-        const leagueHeader = document.createElement("div");
-        
-        leagueHeader.textContent = leagueName;
-        container.appendChild(leagueHeader);
-
-        leagues[leagueName].forEach((match) => {
-            const matchElement = document.createElement("div");
-            matchElement.classList.add("match");
-
-            const homeTeam = match.teams.home.name;
-            const awayTeam = match.teams.away.name;
-            const homeLogo = match.teams.home.logo;
-            const awayLogo = match.teams.away.logo;
-            const score = `${match.goals.home} - ${match.goals.away}`;
-            const time = match.fixture.date
-                ? new Date(match.fixture.date).toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                  })
-                : "N/A";
-
-            matchElement.innerHTML = `
-            <div class="teams">
-              <div class="team">
-                <div class="tt">${homeTeam}</div>
-                <div class="img"><img src="${homeLogo}" alt="${homeTeam}" class="team-logo" /></div>
-                </div>
-                <div class="match-time-container">
-                <span class="match-time">${time}</span>
-                <span class="score">${score}</span>
-                </div>
-                <div class="team">
-                  <div class="img"><img src="${awayLogo}" alt="${awayTeam}" class="team-logo" /></div>
-                  <div class="tt">${awayTeam}</div>
-                </div>
-            </div>`;
-            container.appendChild(matchElement);
-        });
-    });
-}
-
-// Call the function to fetch matches from the local file
-document.addEventListener("DOMContentLoaded", fetchLiveMatchesFromLocalFile);
-
-    </script>
-   <!-- <script>
-      const apiKey = "20f0f4092ddf3663b052ce1061bc2dd5"; // Replace with your actual API key
-
-      async function fetchLiveMatches() {
-        const url = "https://v3.football.api-sports.io/fixtures?live=all";
-        const options = {
-          method: "GET",
-          headers: {
-            "x-rapidapi-host": "v3.football.api-sports.io",
-            "x-rapidapi-key": apiKey,
-          },
-        };
-
-        try {
-          const response = await fetch(url, options);
-          const data = await response.json();
-          console.log( data);
-
-
-          if (data.response && data.response.length > 0) {
-            displayMatches(data.response);
-          } else {
-            document.getElementById("liveMatches").innerHTML =
-              "<p>No live matches currently available.</p>";
-          }
-        } catch (error) {
-          console.error("Error fetching live matches:", error);
-          document.getElementById("liveMatches").innerHTML =
-            "<p>Error loading live matches.</p>";
-        }
-      }
-         /*display the matches that are beiing played*//
-      function displayMatches(matches) {
-        const container = document.getElementById("liveMatches");
-        container.innerHTML = ""; // Clear previous matches
-
-        const leagues = {};
-
-        matches.forEach((match) => {
-          const leagueName = match.league.name;
-
-          if (!leagues[leagueName]) {
-            leagues[leagueName] = [];
-          }
-
-          leagues[leagueName].push(match);
-        });
-
-        Object.keys(leagues).forEach((leagueName) => {
-          const leagueHeader = document.createElement("h4");
-          leagueHeader.textContent = leagueName;
-          container.appendChild(leagueHeader);
-
-          leagues[leagueName].forEach((match) => {
-            const matchElement = document.createElement("div");
-            matchElement.classList.add("match");
-
-            const homeTeam = match.teams.home.name;
-            const awayTeam = match.teams.away.name;
-            const homeLogo = match.teams.home.logo;
-            const awayLogo = match.teams.away.logo;
-            const score = `${match.goals.home} - ${match.goals.away}`;
-            const time = match.fixture.date
-              ? new Date(match.fixture.date).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })
-              : "N/A";
-
-            matchElement.innerHTML = `
-            <div class="teams">
-                <span class="match-time">${time}</span>
-                <div class="team">
-                  <div class="img"><img src="${homeLogo}" alt="${homeTeam}" class="team-logo" /></div>
-                  <div class="tt">${homeTeam}</div>
-                </div>
-                <div class="team">
-                  <div class="img"><img src="${awayLogo}" alt="${awayTeam}" class="team-logo" /> </div>
-                  <div class="tt">${awayTeam}</div>
-                </div>
-             </div>
-                        `;
-            // <div class="score">${score}</div>
-            container.appendChild(matchElement);
-          });
-        });
-      }
-
-      // Fetch live matches on page load
-      document.addEventListener("DOMContentLoaded", fetchLiveMatches);
-    </script> -->
   </body>
 </html>

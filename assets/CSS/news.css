@@ -6,6 +6,17 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
+.light-mode .news-item {
+  background-color: #e0682bee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(243, 6, 6, 0.933);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.light-mode .news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(56, 239, 0, 0.934);
+}
  /* News Item Styling */
 .news-item {
   background-color: #0a1419;
