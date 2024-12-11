@@ -94,5 +94,8 @@
   .events-list li span {
     font-weight: bold;
   }
+  .light-mode .events-list li:hover{
+    background: #476b9b;
+  }
   
   

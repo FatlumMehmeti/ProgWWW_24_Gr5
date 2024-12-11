@@ -7,6 +7,7 @@
     padding: 20px;
     text-align: center;
     position: relative;
+    border-bottom:1px solid #049ff8 ;
   }
 
   .terms-header h1 {
@@ -45,8 +46,22 @@
     background-color: #0b1c26;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #d94343;
+    animation:terms-animacioni 3s ease-in infinite;
+    
   }
-
+@keyframes terms-animacioni {
+  0%{    border: 2.5px solid #d94343;
+  }  
+  25%{    border: 2.5px dotted #d9c043;
+  }  
+  50%{    border: 2.5px double #43d9a2;
+  }  
+  75%{    border: 2.5px dashed #4370d9;
+  }  
+  100%{    border: 2.5px solid #d97543;
+  }  
+}
   .terms-container h2 {
     color: #ffffff;
     margin-top: 20px;

@@ -128,24 +128,24 @@ input:checked + .slider:before {
 }
 
 .light-mode {
-  background-color: #eeeeee;
+  background-color: #90bedc;
   color: #000000;
 }
- .light-mode .navbar{
-  color: white;
- }
  .light-mode .sidebar li:hover {
   color: black;
 }
 .light-mode .search-bar input {
-  background-color: #fbd2d2;
+  background-color: #003c58ad;
+  color: white;
+}
+.light-mode .search-bar input::placeholder {
+  color: rgba(147, 2, 2, 0.625);
+}
+.light-mode .logoja{
   color: white;
 }
 
-.dark-mode {
-  background-color: #fff;
-  color: #ffffff;
-}
+
 
 /* live-scores nav styles */
 .scoresnav-container {
@@ -373,61 +373,12 @@ input:checked + .slider:before {
   box-shadow: 0px 4px 6px rgba(250, 10, 10, 0.2);
   transition: opacity 0.3s ease;
 }
-
-#backToTop:hover {
-  background-color: #0056b3;
-}
-
-/* Very Small Mobile Devices (480px and smaller) */
-@media screen and (max-width: 480px) {
-  body {
-    font-size: 13px;
-  }
-
-  .container {
-    padding: 0 5px;
-  }
-
-  header {
-    font-size: 0.9rem;
-  }
-
-  /* Match Component */
-  .match {
-    padding: 10px;
-    font-size: 0.85rem;
-  }
-
-  .team img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .match-time-container {
-    font-size: 0.7rem;
-  }
-
-  /* Sidebar */
-  .sidebar h3 {
-    font-size: 0.9rem;
-  }
-
-  .sidebar li {
-    font-size: 0.8rem;
-  }
-
   /* Search Bar */
   .search-bar input {
     padding: 6px;
     font-size: 0.85rem;
   }
-
-  /* Back to Top Button */
-  #backToTop {
-    bottom: 10px;
-    right: 10px;
-    width: 35px;
-    height: 35px;
-  }
+#backToTop:hover {
+  background-color: #0056b3;
 }
-
+ 
