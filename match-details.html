@@ -1,151 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Match Details | SaMeSa</title>
-  <link rel="stylesheet" href="assets/CSS/style.css" />
-  <link rel="stylesheet" href="assets/CSS/navstyle.css" />
-  <link rel="stylesheet" href="assets/CSS/footer.css" />
-  <link rel="stylesheet" href="assets/CSS/matches.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
-/>
-<script src="https://kit.fontawesome.com/4e8c1b8130.js" crossorigin="anonymous"></script>
-<link rel="icon" href="assets/Img/favicon.png" type="image/png" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
-  rel="stylesheet"
-/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-  rel="stylesheet"
-/>
-<script src="assets/JS/script.js"></script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Match Details | SaMeSa</title>
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <link rel="stylesheet" href="assets/CSS/navstyle.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css" />
+    <link rel="stylesheet" href="assets/CSS/matches.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/4e8c1b8130.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="assets/JS/script.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </head>
 
-<body>
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <div class="logo">
-          <img src="assets/Img/SaMeSa logo.png" alt="Logo" />
-          <h1 class="logoja"><a href="index.html">SaMeSa</a></h1>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="assets/Img/SaMeSa logo.png" alt="Logo" />
+            <h1 class="logoja"><a href="index.html">SaMeSa</a></h1>
+          </div>
+          <div class="nav-container">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="podcast.html">Podcast</a></li>
+            </ul>
+          </div>
+          <div class="nav-icons">
+            <div class="dark-light-toggle" onclick="toggleTheme()">
+              <i class="ri-contrast-2-line" id="modeIcon"></i>
+            </div>
+            <div class="translate-toggle" onclick="openTranslate()">
+              <i class="ri-translate"></i>
+            </div>
+            <div id="google_translate_element" style="display: none"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="grid-container">
+          <aside class="sidebar">
+            <h4>Pinned Leagues</h4>
+            <ul>
+              <li><i class="flag-icon"></i> Premier League</li>
+              <li><i class="flag-icon"></i> Ligue 1</li>
+              <li><i class="flag-icon"></i> Bundesliga</li>
+              <li><i class="flag-icon"></i> Serie A</li>
+              <li><i class="flag-icon"></i> Eredivisie</li>
+              <li><i class="flag-icon"></i> LaLiga</li>
+              <li><i class="flag-icon"></i> Champions League</li>
+            </ul>
+          </aside>
+
+          <div class="content">
+            <div id="matchDetailsContainer">
+              <p>Loading match details...</p>
+            </div>
+          </div>
         </div>
-        <div class="nav-container">
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
             <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
           </ul>
         </div>
-        <div class="nav-icons">
-          <div class="dark-light-toggle" onclick="toggleTheme()">
-            <i class="ri-contrast-2-line" id="modeIcon"></i>
-          </div>
-          <div class="translate-toggle" onclick="openTranslate()">
-            <i class="ri-translate"></i>
-          </div>
-          <div id="google_translate_element" style="display: none"></div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="grid-container">
-        <aside class="sidebar">
-          <h4>Pinned Leagues</h4>
-          <ul>
-            <li><i class="flag-icon"></i> Premier League</li>
-            <li><i class="flag-icon"></i> Ligue 1</li>
-            <li><i class="flag-icon"></i> Bundesliga</li>
-            <li><i class="flag-icon"></i> Serie A</li>
-            <li><i class="flag-icon"></i> Eredivisie</li>
-            <li><i class="flag-icon"></i> LaLiga</li>
-            <li><i class="flag-icon"></i> Champions League</li>
-          </ul>
-        </aside>
-
-        <div class="content">
-          <div id="matchDetailsContainer">
-            <p>Loading match details...</p>
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
-      </div>
-    </div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <!-- Quick Links Section -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="podcast.html">Podcast</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="support.html">Support</a></li>
-
-        </ul>
-      </div>
-      <!-- Social Media Section -->
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#"><i class="ri-facebook-box-fill"></i></a>
-          <a href="#"><i class="ri-twitter-fill"></i></a>
-          <a href="#"><i class="ri-instagram-line"></i></a>
-          <a href="#"><i class="ri-youtube-fill"></i></a>
-        </div>
-      </div>
-
-      <!-- Contact Information Section -->
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>
-          Email:
-          <a href="mailto:support@sportsliveupdates.com"
-            >support@sportsliveupdates.com</a
-          >
-        </p>
-        <p>Phone: +123 456 7890</p>
-      </div>
-
-      <!-- Newsletter Signup Section -->
-      <div class="footer-section">
-        <h3>Subscribe to Our Newsletter</h3>
-        <form action="#" method="POST">
-          <input type="email" placeholder="Enter your email" required />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Legal Information Section -->
-      <div class="footer-section legal-links">
-        <ul>
-          <li>
-            <a href="/assets/PDFs/Privacy_Policy.pdf" target="_blank"
-              >Privacy Policy</a
+        <!-- Contact Information Section -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a href="mailto:support@sportsliveupdates.com"
+              >support@sportsliveupdates.com</a
             >
-          </li>
-          <li><a href="terms_of_service.html">Terms of Service</a></li>
-          <li><a href="#" id="cookiePolicyLink">Cookie Policy</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="about_us.html">About Us</a></li>
-        </ul>
-      </div>
-    </div>
+          </p>
+          <p>Phone: +123 456 7890</p>
+        </div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="assets/JS/match-details.js"></script>
-</body>
+        <!-- Newsletter Signup Section -->
+        <div class="footer-section">
+          <h3>Subscribe to Our Newsletter</h3>
+          <form action="#" method="POST">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Legal Information Section -->
+        <div class="footer-section legal-links">
+          <ul>
+            <li>
+              <a href="/assets/PDFs/Privacy_Policy.pdf" target="_blank"
+                >Privacy Policy</a
+              >
+            </li>
+            <li><a href="terms_of_service.html">Terms of Service</a></li>
+            <li><a href="#" id="cookiePolicyLink">Cookie Policy</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="assets/JS/match-details.js"></script>
+  </body>
 </html>

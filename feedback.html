@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Football Live Scores, Latest Football Results | SaMeSa</title>
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <link rel="stylesheet" href="assets/CSS/navstyle.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
+    />
+    <script src="https://kit.fontawesome.com/4e8c1b8130.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="assets/Img/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="assets/JS/script.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+    
+h1 {
+    margin: 0;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #e6ff00;
+}
+
+main {
+    padding: 20px;
+    background-color: #000000;
+    color: #c8cdcd;
+}
+
+address {
+    font-style: normal;
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #12ff3a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    color: #c8cdcd;
+}
+
+mark {
+    background-color: #ff4c4c;
+    color: #ffffff;
+}
+
+ul, dl {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+.rating-box {
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #555;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    transform: rotateY(10deg);
+    color: #c8cdcd;
+}
+
+textarea {
+    resize: both;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    outline-offset: 4px;
+}
+
+.animated-button {
+    background-color: #12ff3a;
+    color: #000000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.animated-button:hover {
+    background-color: #8912ff;
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* Forms Styling */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #c8cdcd;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #12ff3a;
+    border: 1px solid #555;
+    background-color: #1e1e1e;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    color: #e6ff00;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <img src="assets/Img/SaMeSa logo.png" alt="Logo" />
+              <h1 class="logoja"><a href="index.html">SaMeSa</a></h1>
+            </div>
+            <div class="nav-container">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+              </ul>
+            </div>
+            <div class="nav-icons">
+              <!-- Dark/Light Mode Toggle -->
+              <div class="dark-light-toggle" onclick="toggleTheme()">
+                <i class="ri-contrast-2-line" id="modeIcon"></i>
+              </div>
+              <!-- Language Translate Option -->
+              <div class="translate-toggle" onclick="openTranslate()">
+                <i class="ri-translate"></i>
+              </div>
+              <div id="google_translate_element" style="display: none"></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+    
+      <main>
+        <div class="container">
+
+        <h1>Rate Your Football Experience</h1>
+        <!-- Address Section -->
+        <address>
+            <strong>Stadium:</strong> Wembley Stadium, London<br>
+            <strong>Contact:</strong> info@wembleystadium.com<br>
+            <mark>Best football arena in the UK</mark>
+        </address>
+
+        <!-- Nested List -->
+        <h2>Available Features</h2>
+        <ul>
+            <li>Seating
+                <ul>
+                    <li>VIP Seats</li>
+                    <li>General Admission</li>
+                </ul>
+            </li>
+            <li>Facilities
+                <ul>
+                    <li>Restrooms</li>
+                    <li>Food and Beverages</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Defined List -->
+        <dl>
+            <dt>Match</dt>
+            <dd>International Friendly</dd>
+
+            <dt>Date</dt>
+            <dd>March 15, 2025</dd>
+
+            <dt>Time</dt>
+            <dd>8:00 PM</dd>
+        </dl>
+
+        <!-- Rating Forms -->
+        <div class="rating-box">
+            <form>
+                <label for="experience">Rate Your Experience:</label><br>
+                <input type="radio" name="rating" value="1"> 1
+                <input type="radio" name="rating" value="2"> 2
+                <input type="radio" name="rating" value="3"> 3
+                <input type="radio" name="rating" value="4"> 4
+                <input type="radio" name="rating" value="5"> 5<br><br>
+            </form>
+
+            <form>
+                <label>Favorite Facility:</label><br>
+                <input type="checkbox" name="facility" value="seating"> Seating<br>
+                <input type="checkbox" name="facility" value="food"> Food<br>
+                <input type="checkbox" name="facility" value="restrooms"> Restrooms<br>
+            </form>
+
+            <form autocomplete="on">
+                <label for="team">Favorite Team:</label>
+                <input list="teams" name="team" id="team">
+                <datalist id="teams">
+                    <option value="Manchester United">
+                    <option value="Liverpool">
+                    <option value="Arsenal">
+                    <option value="Chelsea">
+                    <option value="Manchester City">
+                </datalist>
+            </form>
+        </div>
+
+        <!-- Output and Pattern -->
+        <form id="feedbackForm">
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" placeholder="Write your feedback" pattern=".{10,}" required></textarea><br>
+            <button type="submit" class="animated-button">Submit</button>
+        </form>
+
+        <output id="result"></output>
+    </main>
+
+</div>
+     <footer class="site-footer">
+      <div class="container">
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <a href="mailto:support@sportsliveupdates.com"
+              >support@sportsliveupdates.com</a
+            >
+          </p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Subscribe to Our Newsletter</h3>
+          <form id="newsletterForm">
+            <input type="email" id="emailInput" placeholder="Enter your email" required />
+            <button type="submit" >Subscribe</button>
+          </form>
+        </div>
+
+        
+        <!-- Legal Information Section -->
+        <div class="footer-section legal-links">
+          <ul>
+            <li>
+              <a href="/assets/PDFs/Privacy_Policy.pdf" target="_blank"
+                >Privacy Policy</a
+              >
+            </li>
+            <li><a href="terms_of_service.html">Terms of Service</a></li>
+            <li><a href="#" id="cookiePolicyLink">Cookie Policy</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Text -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sports Live Updates. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Modal HTML -->
+    <div id="cookiePolicyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">About Your Privacy</div>
+        <div class="modal-body">
+          <p>
+            We process your data to deliver content or advertisements and
+            measure the delivery of such content or advertisements to extract
+            insights about our website. We share this information with our
+            partners on the basis of consent. You may exercise your right to
+            consent based on a specific purpose below or at a partner level in
+            the link under each purpose. These choices will be signaled to our
+            vendors participating in the Transparency and Consent Framework.
+          </p>
+          <div class="cookie-options">
+            <div class="cookie-items">
+              <label>Strictly Necessary Cookies</label>
+              <input type="checkbox" checked disabled />
+            </div>
+            <div class="cookie-items">
+              <label>Performance Cookies</label>
+              <input type="checkbox" />
+            </div>
+            <div class="cookie-items">
+              <label>Targeting Cookies</label>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="reject" onclick="rejectCookies()">Reject All</button>
+          <button class="accept" onclick="acceptCookies()">Allow All</button>
+        </div>
+      </div>
+    </div>
+    <script>
+        // Arrays and JS Objects
+        const players = ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'];
+        const teamInfo = { name: 'Dream Team', rank: 1 };
+
+        // JS Functions
+        console.log(Number.MAX_VALUE);
+        console.log(NaN);
+        console.log((12345).toExponential());
+        console.log((255).toString(16));
+
+        // Regular Expressions
+        const feedback = 'The game was fantastic! The crowd was energetic!';
+        console.log(feedback.match(/game/));
+        console.log(feedback.replace(/crowd/, 'audience'));
+
+        // Handle Form Submission
+       // Handle Form Submission
+    document.addEventListener("DOMContentLoaded", function() {
+        const feedbackForm = document.getElementById("feedbackForm");
+        feedbackForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const feedbackInput = document.getElementById("feedback").value;
+            if (feedbackInput) {
+                alert(`Feedback submitted: ${feedbackInput}`);
+            } else {
+                alert("Please provide your feedback before submitting.");
+            }
+        });
+    });
+    </script>
+
+    <script src="assets/JS/jQuery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".rating-box").on("mouseenter", function() {
+                $(this).animate({
+                    opacity: 0.8,
+                    height: '+=10px'
+                }, 500);
+            }).on("mouseleave", function() {
+                $(this).animate({
+                    opacity: 1,
+                    height: '-=10px'
+                }, 500);
+            });
+
+            // Show/hide example
+            $("form").first().hide().slideDown(1000);
+
+            // Slide toggle example
+            $(".animated-button").on("click", function(event) {
+                event.preventDefault();
+                $(".rating-box").slideToggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>
