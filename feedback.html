@@ -27,18 +27,6 @@
 
 <style>
     
-h1 {
-    margin: 0;
-    font-size: 2em;
-    text-transform: uppercase;
-    color: #e6ff00;
-}
-
-main {
-    padding: 20px;
-    background-color: #000000;
-    color: #c8cdcd;
-}
 
 address {
     font-style: normal;
@@ -142,6 +130,61 @@ input[type="checkbox"] {
     color: #e6ff00;
 }
 
+
+        .con{
+          display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+           
+        }
+.con .hover-box {
+            width: 100px;
+            height: 100px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .con       .hover-box:hover {
+            animation: spin 0.5s linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .con    .hover-box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .con    .hover-box2:hover {
+            transform: scale(1.2);
+        }
 </style>
 </head>
 <body>
@@ -177,7 +220,10 @@ input[type="checkbox"] {
       <main>
         <div class="container">
 
-        <h1>Rate Your Football Experience</h1>
+        <h1 style=" margin: 0;
+        font-size: 2em;
+        text-transform: uppercase;
+        color: #e6ff00;">Rate Your Football Experience</h1>
         <!-- Address Section -->
         <address>
             <strong>Stadium:</strong> Wembley Stadium, London<br>
@@ -246,15 +292,31 @@ input[type="checkbox"] {
         </div>
 
         <!-- Output and Pattern -->
-        <form id="feedbackForm">
-            <label for="feedback">Feedback:</label>
-            <textarea id="feedback" placeholder="Write your feedback" pattern=".{10,}" required></textarea><br>
-            <button type="submit" class="animated-button">Submit</button>
+        <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)">
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" placeholder="Write your feedback" required></textarea>
+          <button type="submit" class="animated-button">Submit</button>
         </form>
+      
 
         <output id="result"></output>
+        <div class="con">
+        <div class="hover-box" onmouseover="hoverAlert()">
+          Hover Me
+      </div>
+       <div class="hover-box2" onmouseover="hoverAlert2()">
+        Hover Me
+    </div>
+  </div>
+    <script>
+        function hoverAlert2() {
+            alert("You hovered over the box!");
+        }
+          function hoverAlert() {
+              alert("You hovered over the box!");
+          }
+    </script>
     </main>
-
 </div>
      <footer class="site-footer">
       <div class="container">
@@ -375,20 +437,6 @@ input[type="checkbox"] {
         console.log(feedback.match(/game/));
         console.log(feedback.replace(/crowd/, 'audience'));
 
-        // Handle Form Submission
-       // Handle Form Submission
-    document.addEventListener("DOMContentLoaded", function() {
-        const feedbackForm = document.getElementById("feedbackForm");
-        feedbackForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const feedbackInput = document.getElementById("feedback").value;
-            if (feedbackInput) {
-                alert(`Feedback submitted: ${feedbackInput}`);
-            } else {
-                alert("Please provide your feedback before submitting.");
-            }
-        });
-    });
     </script>
 
     <script src="assets/JS/jQuery.js"></script>
@@ -406,10 +454,9 @@ input[type="checkbox"] {
                 }, 500);
             });
 
-            // Show/hide example
             $("form").first().hide().slideDown(1000);
 
-            // Slide toggle example
+          
             $(".animated-button").on("click", function(event) {
                 event.preventDefault();
                 $(".rating-box").slideToggle(1000);

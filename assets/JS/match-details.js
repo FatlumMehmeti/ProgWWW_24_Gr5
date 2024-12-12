@@ -10,7 +10,7 @@ if (fixtureId) {
 }
 
 async function fetchMatchDetails(fixtureId) {
-  const apiKey = "20f0f4092ddf3663b052ce1061bc2dd5"; // Replace with your actual API key
+  const apiKey = "20f0f4092ddf3663b052ce1061bc2dd5"; 
   const url = `https://v3.football.api-sports.io/fixtures?id=${fixtureId}`;
   const options = {
     method: "GET",

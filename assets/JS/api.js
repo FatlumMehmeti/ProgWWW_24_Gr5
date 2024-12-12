@@ -1,4 +1,4 @@
-const apiKey = "b4ae8bd44077f03f8c89736d7c2fe142"; // Replace with your actual API key
+const apiKey = "b4ae8bd44077f03f8c89736d7c2fe142"; 
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("Initializing...");

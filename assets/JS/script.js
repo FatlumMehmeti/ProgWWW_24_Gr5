@@ -2,6 +2,47 @@
 document.addEventListener("DOMContentLoaded", function () {
   applySavedTheme();
   applySavedLanguage();
+
+  // Modal-related logic
+  const modal = document.getElementById("cookiePolicyModal");
+  const cookiePolicyLink = document.getElementById("cookiePolicyLink");
+
+  if (cookiePolicyLink && modal) {
+    // Show modal on link click
+    cookiePolicyLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      modal.style.display = "block";
+    });
+
+    // Close modal when clicking outside the modal content
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+
+  // Enable checkbox toggling on label click
+  document.querySelectorAll(".cookie-options .cookie-items").forEach((option) => {
+    const checkbox = option.querySelector('input[type="checkbox"]');
+    if (checkbox) {
+      option.addEventListener("click", () => {
+        if (!checkbox.disabled) {
+          checkbox.checked = !checkbox.checked;
+        }
+      });
+    }
+  });
+
+  // Newsletter form submission logic
+  const newsletterForm = document.getElementById("newsletterForm");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const email = document.getElementById("emailInput").value;
+      alert(`You have been subscribed with this email: ${email}`);
+    });
+  }
 });
 
 // Apply saved theme from localStorage
@@ -70,48 +111,15 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// Get modal and link elements
-const modal = document.getElementById("cookiePolicyModal");
-const cookiePolicyLink = document.getElementById("cookiePolicyLink");
-
-// Show modal on link click
-cookiePolicyLink.addEventListener("click", (event) => {
-  event.preventDefault();
-  modal.style.display = "block";
-});
-
 // Functions for accept and reject buttons
 function acceptCookies() {
   alert("You have accepted cookies.");
-  modal.style.display = "none";
+  const modal = document.getElementById("cookiePolicyModal");
+  if (modal) modal.style.display = "none";
 }
 
 function rejectCookies() {
   alert("You have rejected cookies.");
-  modal.style.display = "none";
+  const modal = document.getElementById("cookiePolicyModal");
+  if (modal) modal.style.display = "none";
 }
-
-// Disable clicks outside the modal
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    event.stopPropagation();
-  }
-});
-// Enable checkbox on label click
-document.querySelectorAll(".cookie-options .cookie-items").forEach((option) => {
-  option.addEventListener("click", () => {
-    const checkbox = option.querySelector('input[type="checkbox"]');
-    if (!checkbox.disabled) {
-      checkbox.checked = !checkbox.checked;
-    }
-  });
-});
-// JavaScript for handling form submission
-document
-  .getElementById("newsletterForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    const email = document.getElementById("emailInput").value; // Get the email input value
-    alert(`You have been subscribed with this email: ${email}`); // Show alert with the email
-  });
-

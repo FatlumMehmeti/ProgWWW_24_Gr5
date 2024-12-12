@@ -1,4 +1,4 @@
-const API_KEY = "8c8ed8fe2e304904b90602c79d250237"; // Replace with your NewsAPI key
+const API_KEY = "8c8ed8fe2e304904b90602c79d250237"; 
 const newsContainer = document.querySelector(".news-container");
 const tabs = document.querySelectorAll(".tab");
 

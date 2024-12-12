@@ -1,6 +1,6 @@
 // Fetch matches from local JSON file
 async function fetchLiveMatchesFromLocalFile() {
-  const localFilePath = "assets/data/data.json"; // Update with the correct path
+  const localFilePath = "assets/data/data.json"; 
 
   try {
     const response = await fetch(localFilePath);
